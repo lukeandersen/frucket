@@ -1,0 +1,121 @@
+@charset "utf-8";
+
+// Additional  compass includes
+@import "compass";
+@import "compass/css3"; 
+// Here's where we import and combine all of our partials 
+
+@import "partials/reset.scss";
+@import "partials/mixins.scss";
+@import "partials/type.scss";
+@import "partials/placeholders.scss";
+
+
+// // AUTO SPRITES
+// // add dimensions of image dynamically CSS
+// $assets-sprite-dimensions: true;
+// //add spacing to all sprites
+// $assets-spacing: 20px; 
+// @import "sprites/assets/*.png";
+// @include all-assets-sprites;
+
+//-----------------------------------
+// Add your site vairables here
+//-----------------------------------
+
+//Site
+$base-site-width: 960px;
+
+//Type
+$base-font-family: $helvetica;
+$base-font-size: 12px;
+$base-line-height: 1.4;
+$font-color: #333;
+
+//Links
+$link-color: #00e;
+$link-visited-color: #551a8b;
+$link-hover-color: #06e;
+ 
+// text colours
+$loud: #000;
+$main: #333;
+
+
+
+/* BASE STYLES
+ -----------------------------------------------------------------------------------------------------------*/
+em, i{font-style:italic;}strong, b{font-weight:bold;}
+a, input[type=button], input[type=submit], button { cursor:pointer }
+input {border: 0;}
+
+
+/* STRUCTURE
+ -----------------------------------------------------------------------------------------------------------*/
+html, body{ font-size: 100%; -webkit-font-smoothing: antialiased; height: 100%;}
+body {  
+    color:$font-color; 
+    font-family: $base-font-family;
+    line-height:$base-line-height;
+    background: #f8f8f8;
+}
+
+.site { text-align: center;}
+.container {width:$base-site-width; margin:0 auto;}
+.site-header {
+    background:#e5721e;
+    padding:8em 0;
+    color: white;
+}
+.site-content {
+    @extent %clearfix;
+    padding:3em 0;
+    .signup {
+        margin:2em 0 3em;
+        input {
+            border:1px solid #ccc;
+            padding:1em;
+            width: 300px;
+            margin-right: 5px;
+            background: white;
+        }
+        input[type="submit"] {
+            color: #996633;
+            border-color: #d99c5f;
+            font-weight: bold;
+            background: #feba48;
+            @include background(linear-gradient(top, #feda71, #feba48));
+            text-shadow: 0 1px rgba(white, 0.5);
+            width: auto;
+            margin-right: 0;
+            &:hover {
+                background: #feda71;
+            }
+        }
+    }
+}
+.site-footer {
+    margin-top: 2em;
+    font-size:12px;
+    .social {
+        a {
+            margin:0 5px;
+            opacity: 0.5;
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+/* Sprite demo */
+// .sprite{
+//     @include assets-sprite(search,false,20px,20px); //image-name, get sprite dimensions, offset-x, offset-y(relative to auto generated bg pos)
+// }
+
+
+// @import "partials/forms-buttons.scss";
+// @import "partials/plugins.scss";
+@import "partials/helpers.scss";
+// @import "partials/media-queries.scss";
+@import "partials/print.scss";
